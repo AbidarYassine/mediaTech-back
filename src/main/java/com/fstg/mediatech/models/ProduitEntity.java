@@ -1,18 +1,13 @@
 package com.fstg.mediatech.models;
 
 import java.io.Serializable;
-
-/***
- * Entity Client
- * @author yassine
- */
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,28 +17,42 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "clients")
+@Table(name = "produits")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientEntity implements Serializable {
+public class ProduitEntity implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-
-	@Id()
-	@GeneratedValue
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7275079172834495736L;
+	
+	
+	@Id
 	private Integer id;
 	
 	@Column(nullable = false)
-	private String nom;
+	private String libelle;
+	
+	@Column(nullable=false)
+	private String 	ref;
+	
+	
 	@Column(nullable = false)
-	private String prenom;
+	private BigDecimal prix;
 	
-	@Column(name = "client_telephone")
-	private String telephone;
 	
-	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<FactureEntity> factures;
+	@Column(nullable = false)
+	private double quantite_stock;
+	
+	@OneToMany(mappedBy = "produit",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private List<LigneFactureEntity> ligneFactures;
+	
+	
+	
+	
+	
 	
 	
 	
