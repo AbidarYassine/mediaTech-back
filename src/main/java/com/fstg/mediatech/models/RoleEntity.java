@@ -22,6 +22,7 @@ import java.util.List;
 public class RoleEntity implements Serializable {
 
     @Id
+    @GeneratedValue
     private Integer roleId;
     @Column(nullable = false)
     private String name;

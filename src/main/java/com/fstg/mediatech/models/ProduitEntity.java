@@ -28,6 +28,7 @@ public class ProduitEntity implements Serializable {
 
 
 	@Id
+	@GeneratedValue
 	private Integer id;
 
 	@Column(nullable = false)

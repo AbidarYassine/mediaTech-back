@@ -22,6 +22,7 @@ import java.util.List;
 public class UserEntity implements Serializable {
 
     @Id
+    @GeneratedValue
     private Integer userId;
     @Column(nullable = false)
     private String username;
@@ -33,6 +34,9 @@ public class UserEntity implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "roleId")
     )
     private List<RoleEntity> roles;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private UserProfile profile;
 
 
 }

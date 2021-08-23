@@ -10,4 +10,5 @@ public class MediatechApplication {
 		SpringApplication.run(MediatechApplication.class, args);
 	}
 
+
 }
