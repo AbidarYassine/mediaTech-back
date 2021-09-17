@@ -3,6 +3,7 @@ package com.fstg.mediatech.service;
 import com.fstg.mediatech.dao.ClientDao;
 import com.fstg.mediatech.dto.ClientRequestDto;
 import com.fstg.mediatech.dto.ClientResponseDto;
+import com.fstg.mediatech.exception.EntityNotFoundException;
 import com.fstg.mediatech.models.ClientEntity;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
@@ -31,7 +32,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientResponseDto findById(Integer id) {
-        ClientEntity clientEntity = clientDao.findById(id).orElseThrow(() -> new RuntimeException("Client not found"));
+        ClientEntity clientEntity = clientDao.findById(id).orElseThrow(() -> new EntityNotFoundException("Client not found"));
         return modelMapper.map(clientEntity, ClientResponseDto.class);
     }
 
@@ -55,7 +56,7 @@ public class ClientServiceImpl implements ClientService {
             ClientEntity updated = clientDao.save(clientEntity);
             return modelMapper.map(updated, ClientResponseDto.class);
         } else {
-            throw new NotFoundException("Client Not found");
+            throw new EntityNotFoundException("Client Not Found");
         }
     }
 

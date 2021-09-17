@@ -21,7 +21,7 @@ public class ClientController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<ClientResponseDto>> getClient() {
+    public ResponseEntity<List<ClientResponseDto>> getClients() {
         return new ResponseEntity<>(clientService.findAll(), HttpStatus.OK);
     }
 
@@ -35,7 +35,6 @@ public class ClientController {
     public ResponseEntity<ClientResponseDto> findById(@PathVariable("id") Integer id) {
         ClientResponseDto clientResponseDto = clientService.findById(id);
         return ResponseEntity.ok(clientResponseDto);
-
     }
 
     @GetMapping("/nom/{nom}")
