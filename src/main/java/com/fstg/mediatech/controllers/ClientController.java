@@ -2,7 +2,7 @@ package com.fstg.mediatech.controllers;
 
 import com.fstg.mediatech.dto.ClientRequestDto;
 import com.fstg.mediatech.dto.ClientResponseDto;
-import com.fstg.mediatech.service.ClientService;
+import com.fstg.mediatech.service.facade.ClientService;
 import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -26,6 +26,9 @@ public class ClientRequestDto {
     @Size(max = 20, message = "ce champs ne doit pas depasser 20 charactere")
     private String prenom;
 
+    @NotBlank(message = "Ce Champ est obligatoire !!")
+    private String cin;
+
     @NotNull
     @Pattern(regexp = "^(\\+212|0)([ \\-_/]*)(\\d[ \\-_/]*){9}$", message = "format invalid")
     private String telephone;

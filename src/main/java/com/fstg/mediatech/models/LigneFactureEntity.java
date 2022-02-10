@@ -36,7 +36,6 @@ public class LigneFactureEntity implements Serializable {
 	@JoinColumn(name="produit_id")
 	private ProduitEntity produit;
 
-
 	private double quantite;
 
 

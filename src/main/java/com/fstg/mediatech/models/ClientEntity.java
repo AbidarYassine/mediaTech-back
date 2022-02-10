@@ -24,7 +24,8 @@ public class ClientEntity implements Serializable {
 	@Id()
 	@GeneratedValue
 	private Integer id;
-
+	@Column(nullable = false)
+	private String cin;
 	@Column(nullable = false)
 	private String nom;
 	@Column(nullable = false)
@@ -33,7 +34,7 @@ public class ClientEntity implements Serializable {
 	@Column(name = "client_telephone")
 	private String telephone;
 
-	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<FactureEntity> factures;
 
 

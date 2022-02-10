@@ -1,10 +1,11 @@
-package com.fstg.mediatech.service;
+package com.fstg.mediatech.service.impl;
 
 import com.fstg.mediatech.dao.ClientDao;
 import com.fstg.mediatech.dto.ClientRequestDto;
 import com.fstg.mediatech.dto.ClientResponseDto;
 import com.fstg.mediatech.exception.EntityNotFoundException;
 import com.fstg.mediatech.models.ClientEntity;
+import com.fstg.mediatech.service.facade.ClientService;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

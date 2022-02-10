@@ -43,7 +43,7 @@ public class ProduitEntity implements Serializable {
 
 
 	@Column(nullable = false)
-	private double quantite_stock;
+	private double quantiteStock;
 
 	@OneToMany(mappedBy = "produit",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<LigneFactureEntity> ligneFactures;

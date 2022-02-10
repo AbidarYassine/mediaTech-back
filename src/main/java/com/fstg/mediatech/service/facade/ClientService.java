@@ -1,4 +1,4 @@
-package com.fstg.mediatech.service;
+package com.fstg.mediatech.service.facade;
 
 
 import com.fstg.mediatech.dto.ClientRequestDto;
@@ -8,6 +8,7 @@ import javassist.NotFoundException;
 import java.util.List;
 
 public interface ClientService {
+
     ClientResponseDto save(ClientRequestDto clientRequestDto);
 
     ClientResponseDto findById(Integer id);
